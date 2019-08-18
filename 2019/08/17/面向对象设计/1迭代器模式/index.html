@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="description" content="设计模式 - 迭代器模式">
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="RTF">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1">
+
+
+
+<link rel="canonical" href="http://yoursite.com/2019/08/17/面向对象设计/1迭代器模式/">
+
+
+<meta name="description" content="涉及对象 迭代器 具体的迭代器 集合 具体的集合  UML图 实现逻辑1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950// 定义迭代器接口public interface Iterator &amp;#123;  // 是否有下一个元素  boolean hasNext()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式 - 迭代器模式">
+<meta property="og:url" content="http://yoursite.com/2019/08/17/面向对象设计/1迭代器模式/index.html">
+<meta property="og:site_name" content="RTF">
+<meta property="og:description" content="涉及对象 迭代器 具体的迭代器 集合 具体的集合  UML图 实现逻辑1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950// 定义迭代器接口public interface Iterator &amp;#123;  // 是否有下一个元素  boolean hasNext()">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://yoursite.com/2019/08/17/面向对象设计/1迭代器模式/assets/iterator.png">
+<meta property="og:updated_time" content="2019-08-17T15:33:52.033Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式 - 迭代器模式">
+<meta name="twitter:description" content="涉及对象 迭代器 具体的迭代器 集合 具体的集合  UML图 实现逻辑1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950// 定义迭代器接口public interface Iterator &amp;#123;  // 是否有下一个元素  boolean hasNext()">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/17/面向对象设计/1迭代器模式/assets/iterator.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 设计模式 - 迭代器模式 - RTF </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">RTF</a>
+    </h1>
+
+    <nav id="nav-top" style="text-align:left;">
+        
+            <ul id="menu-top" class="nav-top-items" style="display:inline;">
+                
+                    <li class="menu-item" style="display:inline;">
+                        <a href="/archives">
+                            
+                            
+                                归档
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          设计模式 - 迭代器模式
+        
+      </h1>
+
+      <time class="post-time">
+          8月 17 2019
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h5 id="涉及对象"><a href="#涉及对象" class="headerlink" title="涉及对象"></a>涉及对象</h5><ul>
+<li>迭代器</li>
+<li>具体的迭代器</li>
+<li>集合</li>
+<li>具体的集合</li>
+</ul>
+<h5 id="UML图"><a href="#UML图" class="headerlink" title="UML图"></a>UML图</h5><p><img src="./assets/iterator.png" alt="JpaRepository"></p>
+<h5 id="实现逻辑"><a href="#实现逻辑" class="headerlink" title="实现逻辑"></a>实现逻辑</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义迭代器接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 是否有下一个元素</span></span><br><span class="line">  <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span> </span>;</span><br><span class="line">  <span class="comment">// 获取下一个元素</span></span><br><span class="line">  <span class="function">Object <span class="title">next</span><span class="params">()</span> </span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 是否创建迭代器接口的标识</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterable</span> </span>&#123;</span><br><span class="line">  <span class="function">Iterator <span class="title">iterator</span><span class="params">()</span> </span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 创建集合接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Collection</span> <span class="keyword">extends</span> <span class="title">Iterable</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 创建具体集合实现类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span> <span class="keyword">implements</span> <span class="title">Collection</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> Object[] objects ;</span><br><span class="line">  <span class="comment">// 创建具体的迭代器对象</span></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> Iterator <span class="title">iterator</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ListIterator() ;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">ListIterator</span> <span class="keyword">implements</span> <span class="title">Iterator</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> currentIndex = <span class="number">0</span> ;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> objects.length &gt; currentIndex ;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">next</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> objects[currentIndex++] ;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> TestMain&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    Iterator iterator = <span class="keyword">new</span> ArrayList().iterator() ;</span><br><span class="line">    <span class="comment">// 添加元素</span></span><br><span class="line">    <span class="comment">// 遍历集合</span></span><br><span class="line">    <span class="keyword">while</span>( iterator.hasNext() )&#123;</span><br><span class="line">      Object item = iterator.next() ;</span><br><span class="line">   		<span class="comment">// 对元素进行处理</span></span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h5><ul>
+<li>对象组或集合实现方式改变时，例如由数字为改List，迭代遍历的过程不需要做任何修改，代码都可以正常工作。</li>
+</ul>
+<h5 id="拓展点"><a href="#拓展点" class="headerlink" title="拓展点"></a>拓展点</h5><ul>
+<li>不要只使用具体类来编程，要优先使用抽象类和接口来编程。因为难以理解抽象类和接口，常常使用具体迭代器和具体的集合编程，而不使用迭代器和集合接口，总想使用具体的类类来解决所有的问题。但是如果只使用具体的类来解决问题，很容易导致类之间的强耦合，这些类也难以作为组件被再次利用。为了弱化类之间的耦合，进而使得类更加容易作为组件被再次利用，需要引入抽象和接口。</li>
+</ul>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2019/08/18/面向对象设计/4工厂方法模式/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">设计模式 - 工厂方法模式</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2019/08/17/面向对象设计/2适配器模式/">
+        <span class="next-text nav-default">设计模式 - 适配器模式</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.9.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="description" content="面向对象的设计">
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="RTF">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1">
+
+
+
+<link rel="canonical" href="http://yoursite.com/2019/08/15/面向对象设计/0面向对象的设计/">
+
+
+<meta name="description" content="设计目的 可维护。修改已有功能时，影响范围可控，不影响系统的其它功能。 可扩展。修改需求、扩展功能，在已测试完成功能的基础上，可实现扩展。 可复用。复用的级别包括：代码复用、功能复用、模块复用、系统复用。 灵活性。在可维护、可扩展和可复用的基础上，可以通过自由组合和复用，实现新的功能。  设计原则开闭原则。​        扩展开放，修改关闭。面向对象设计的基础，其它的设计原则都是基于此原则进行的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象的设计">
+<meta property="og:url" content="http://yoursite.com/2019/08/15/面向对象设计/0面向对象的设计/index.html">
+<meta property="og:site_name" content="RTF">
+<meta property="og:description" content="设计目的 可维护。修改已有功能时，影响范围可控，不影响系统的其它功能。 可扩展。修改需求、扩展功能，在已测试完成功能的基础上，可实现扩展。 可复用。复用的级别包括：代码复用、功能复用、模块复用、系统复用。 灵活性。在可维护、可扩展和可复用的基础上，可以通过自由组合和复用，实现新的功能。  设计原则开闭原则。​        扩展开放，修改关闭。面向对象设计的基础，其它的设计原则都是基于此原则进行的">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="http://yoursite.com/2019/08/15/面向对象设计/0面向对象的设计/assets/jpaRepository.png">
+<meta property="og:updated_time" content="2019-08-17T15:07:06.831Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象的设计">
+<meta name="twitter:description" content="设计目的 可维护。修改已有功能时，影响范围可控，不影响系统的其它功能。 可扩展。修改需求、扩展功能，在已测试完成功能的基础上，可实现扩展。 可复用。复用的级别包括：代码复用、功能复用、模块复用、系统复用。 灵活性。在可维护、可扩展和可复用的基础上，可以通过自由组合和复用，实现新的功能。  设计原则开闭原则。​        扩展开放，修改关闭。面向对象设计的基础，其它的设计原则都是基于此原则进行的">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/15/面向对象设计/0面向对象的设计/assets/jpaRepository.png">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 面向对象的设计 - RTF </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">RTF</a>
+    </h1>
+
+    <nav id="nav-top" style="text-align:left;">
+        
+            <ul id="menu-top" class="nav-top-items" style="display:inline;">
+                
+                    <li class="menu-item" style="display:inline;">
+                        <a href="/archives">
+                            
+                            
+                                归档
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          面向对象的设计
+        
+      </h1>
+
+      <time class="post-time">
+          8月 15 2019
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h4 id="设计目的"><a href="#设计目的" class="headerlink" title="设计目的"></a>设计目的</h4><ul>
+<li>可维护。修改已有功能时，影响范围可控，不影响系统的其它功能。</li>
+<li>可扩展。修改需求、扩展功能，在已测试完成功能的基础上，可实现扩展。</li>
+<li>可复用。复用的级别包括：代码复用、功能复用、模块复用、系统复用。</li>
+<li>灵活性。在可维护、可扩展和可复用的基础上，可以通过自由组合和复用，实现新的功能。</li>
+</ul>
+<h4 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h4><h5 id="开闭原则。"><a href="#开闭原则。" class="headerlink" title="开闭原则。"></a>开闭原则。</h5><p>​        扩展开放，修改关闭。面向对象设计的基础，其它的设计原则都是基于此原则进行的扩充。</p>
+<h5 id="里式替换原则。"><a href="#里式替换原则。" class="headerlink" title="里式替换原则。"></a>里式替换原则。</h5><p>​        所有使用父类的地方，都可以使用子类替换；子类只能实现父类定义的抽象方法，而不能覆盖父类的非抽象方法，但子类可以定义自己特有的方法。</p>
+<h5 id="单一职责原则。"><a href="#单一职责原则。" class="headerlink" title="单一职责原则。"></a>单一职责原则。</h5><p>​        引起对象变化的原因只有一个。降低类的复杂度，一个类只负责一项职责，其逻辑复杂度要简单的多；提高类的可读性和可维护性；降低变更所带来的风险，减少对其它功能的影响。</p>
+<p>​        例如：springJPA中封装的JPA查询接口，接口拆分如下：</p>
+<ul>
+<li>Repository：DAO接口统一的标识，没有封装任何接口方法。</li>
+<li>CrudRepository：只封装了对单个对象操作的增删改查接口。</li>
+<li>PagingAndSortingRepository：只封装了分页和排序查询的方法。</li>
+<li>QueryByExampleExecutor：只包含基于Example对象的查询的接口方法。</li>
+<li>JpaRepository：基于单一职责的原则，在组合Repository、CrudRepository、PagingAndSortingRepository和QueryByExampleExecutor接口的基础上，丰富了对于JPA特性的查询方法接口，对外提供基于JPA的操作接口。</li>
+</ul>
+<p><img src="./assets/jpaRepository.png" alt="JpaRepository"></p>
+<h5 id="接口隔离原则。"><a href="#接口隔离原则。" class="headerlink" title="接口隔离原则。"></a>接口隔离原则。</h5><p>​        接口是设计时对外部设定的契约；不要试图去建立一个很庞大的接口供所有依赖它的类去调用，依赖几个专有的接口要比依赖一个综合的接口更灵活。接口隔离涉及的接口拆分，并不是拆分的越小越好，需要同时考虑单一职责原则。</p>
+<h5 id="迪米特法则"><a href="#迪米特法则" class="headerlink" title="迪米特法则"></a>迪米特法则</h5><p>​        一个对象应该对于其他对象保持最小的了解，也叫做最小知识化原则。类之间的关联关系越密切，耦合度越高，当一个类发生改变时，对另一个类的影响也越大。类之间耦合的方式有很多：依赖、关联、组合和聚合。</p>
+<p>​        例如：某一个项目需要使用视频点播服务，项目关注的是：能够上传一个视频文件，并希望尽快得到处理后的视频播放地址，至于使用什么方式处理上传的视频、视频转换为哪种格式，项目并不关注；视频处理平台可以使用自建的ffmpeg平台也可以集成公有云视频点播服务。</p>
+<h5 id="依赖倒置原则。"><a href="#依赖倒置原则。" class="headerlink" title="依赖倒置原则。"></a>依赖倒置原则。</h5><p>​        高层模块不能直接依赖于底层模块，二者应都依赖于抽象；抽象不应依赖于细节，细节依赖于抽象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个具体的对象，汽车</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">go</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"开车回家"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 工作对象类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Work1</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 定义具体的交通工具，下班只能开车</span></span><br><span class="line">  <span class="keyword">private</span> Car car = <span class="keyword">new</span> Car() ;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">offDuty</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"下班，"</span> + car.go()) ;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    <span class="keyword">new</span> Work1(<span class="keyword">new</span> Car()).offDudy() ;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义交通工具对象类，并提取抽象方法go</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">go</span><span class="params">()</span> </span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重新定义对象汽车，依赖于交通工具类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">implements</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">go</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"开车回家"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 新建对象公交车，依赖于交通工具类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bus</span> <span class="keyword">implements</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">go</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"做公交回家"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 重新定义工作对象类，并依赖于交通工具接口对象</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Work2</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> Vehicle vehicle ;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Work2</span><span class="params">(Vehicle vehicle)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.vehicle = vehicle ;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">offDuty</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"下班，"</span> + vehicle.go()) ;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    <span class="keyword">new</span> Work2(<span class="keyword">new</span> Car()).offDudy() ;</span><br><span class="line">    <span class="keyword">new</span> Work2(<span class="keyword">new</span> Bus()).offDudy() ;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h4><p>​        设计模式的作用是帮助我们编写可复用的类。所谓“可复用”，就是指将类实现为“组件”，当一个组件发生变化时，不需要对其它的组件进行修改或只需要很小的修改即可应对。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2019/08/17/面向对象设计/2适配器模式/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">设计模式 - 适配器模式</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
